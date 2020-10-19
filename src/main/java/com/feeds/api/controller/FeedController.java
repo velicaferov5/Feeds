@@ -45,11 +45,11 @@ public class FeedController {
 
     /**
      * Removes feeds by {@param feedUrl}
-     * @param feedUrl
+     * @param url
      * @return result of delete
      */
-    @DeleteMapping(value = "/delete/{feedUrl}")
-    public boolean deleteFeeds (@PathVariable(name="feedUrl") String feedUrl) {
-        return feedService.deleteFeedsByUrl(feedUrl);
+    @DeleteMapping(value = "/delete/{url}")
+    public boolean deleteFeeds (@PathVariable(name="url") String url) {
+        return feedService.deleteFeedsByUrl(url);
     }
 }

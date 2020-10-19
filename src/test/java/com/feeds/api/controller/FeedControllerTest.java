@@ -72,7 +72,7 @@ class FeedControllerTest {
 
     @Test
     void deleteFeed() throws Exception{
-        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.delete("/api/feed/remove/0").contentType(MediaType.APPLICATION_JSON);
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.delete("/api/feed/delete/0").contentType(MediaType.APPLICATION_JSON);
 
         mockMvc.perform(builder)
                 .andExpect(MockMvcResultMatchers.status().isOk())
