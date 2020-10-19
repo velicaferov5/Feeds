@@ -1,19 +1,32 @@
-API allows to insert, get, update, remove and manage products, stock and orders.
-Products have:
+Feeds API allows to crawl news websites and insert, get, update, remove and manage feeds.
+
+Feeds have:
 ID
-Type
-Name
-Description
+sourceUrl
+feedUrl
+title
+description
+publicationDate
+imageUrl
 
-Stock have:
-ID (linked with feed ID)
-Amount
+Following REST-ful services can be used to get, insert, update, delete feeds:
 
-Orders have:
-ID
-Products
-State
+Get feeds by ID:
+url: /api/feed/get/{id}
+Call type: GET
+input: id (integer)
+Output: Optional Feed
 
-Products, stock, order can be inserted, get, update, removed and managed with REST services.
+Crawl feeds by URL:
+url: /api/feed/add
+Call type: POST
+input: url (String)
+Output: Feed list
 
-Requirement (Java version): 11
+Delete feeds by URL:
+url: /api/feed/delete/{url}
+Call type: DELETE
+input: url (String)
+Output: Boolean (success of deletion)
+
+Requirement (Java version): 12
